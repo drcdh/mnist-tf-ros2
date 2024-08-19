@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import os
 import random
+import sys
 
 import numpy as np
 
@@ -8,6 +10,10 @@ import rclpy.node
 
 from mnist.srv import MnistSample
 
+# Never do this
+# This is just so we don't have copies of files in each example package
+# Normally mnist_tf would either be installed from elsewhere or bee apart of the ROS package
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../..")))
 from mnist_tf.data import get_data
 from mnist_tf.model import load_model
 

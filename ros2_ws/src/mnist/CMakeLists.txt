@@ -17,9 +17,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 ament_export_dependencies(rosidl_default_runtime)
 
-#ament_python_install_package(${PROJECT_NAME})
-ament_python_install_package(mnist_tf)
-
 install(PROGRAMS
   scripts/mnist_service.py
   DESTINATION lib/${PROJECT_NAME}
